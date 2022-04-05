@@ -1,14 +1,16 @@
+import user from "../data/user";
+
 function Card() {
   return (
     <figure>
-      <img src="https://picsum.photos/300/300" alt="toto" />
+      <img src={user.avatar_url} alt={user.login} />
       <figcaption>
-        <h2>toto</h2>
+        <h2>{user.login}</h2>
         <dl>
           <dt>followers</dt>
-          <dd>10000</dd>
+          <dd>{user.followers}</dd>
           <dt>repos</dt>
-          <dd>450</dd>
+          <dd>{user.public_repos}</dd>
         </dl>
       </figcaption>
     </figure>
