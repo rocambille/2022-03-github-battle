@@ -1,7 +1,22 @@
+import { useState } from "react";
 import user from "../data/user";
 
 function Card() {
-  return (
+  const [cardData, setCardData] = useState(null);
+
+  return cardData == null ? (
+    <>
+      <input />
+      <button
+        type="button"
+        onClick={() => {
+          setCardData(user);
+        }}
+      >
+        Va chercher
+      </button>
+    </>
+  ) : (
     <figure>
       <img src={user.avatar_url} alt={user.login} />
       <figcaption>
